@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Menu</title>
+    <style>
+        .header{
+            background-color: red;
+            height:80px;
+            text-align:center;
+        }
+        .header h1{
+            margin:0;
+            padding-top: 20px;
+        }
+        .menu-styling{
+            list-style-type: none;
+            background-color: darkgray;
+            padding: 0;
+            margin:0;
+        }
+        #main-menu > li{
+            display:inline-block;
+        }
+        #main-menu > li > a{
+            display: inline-block;
+            padding:10px;
+            text-decoration:none;
+            color:white;
+        }
+        #main-menu > li > a:hover{
+            background-color: black;
+        }
+        .menu-styling li:nth-child(2):hover #sub-menu-1, .menu-styling li:nth-child(3):hover #sub-menu-2{
+            display: block;
+        }
+        #sub-menu ul{
+            list-style-type: none;
+            background-color:white;
+            padding:0;
+            margin:0;
+        }
+        #main-menu-item-2, #main-menu-item-3{
+            position:relative;
+        }
+        .dropdown-sub-menu{
+            position:absolute;
+            display:none;
+            list-style-type: none;
+            width: auto;
+            max-width: 150px;
+            background-color: whitesmoke;
+            padding: 5%;
+        }
+        .dropdown-menu > a:hover + .dropdown-sub-menu{
+            display:block;
+        }
+        .dropdown-sub-menu > li > a{
+            text-decoration: none;
+            color:steelblue;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Demo of Dropdown</h1>
+    </div>
+    <nav>
+        <ul id="main-menu" class="menu-styling">
+            <li><a href="/link1">Link 1</a></li>
+            <li class="dropdown-menu" id="main-menu-item-2">
+                <a href="/link2">Link 2</a>
+                <ul class="dropdown-sub-menu" id="sub-menu-1">
+                    <li><a href="/dd-link1">DD_Link_1</a></li>
+                    <li><a href="/dd-link2">DD_Link_2</a></li>
+                    <li><a href="/dd-link3">DD_Link_3</a></li>
+                </ul>
+            </li>
+            <li class="dropdown-menu" id="main-menu-item-3">
+                <a href="/link3">Link 3</a>
+                <ul class="dropdown-sub-menu" id="sub-menu-2">
+                    <li><a href="/dd-link1">DD_Link_1</a></li>
+                    <li><a href="/dd-link2">DD_Link_2</a></li>
+                    <li><a href="/dd-link3">DD_Link_3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
